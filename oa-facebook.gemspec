@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "lib/omniauth/facebook.rb",
     "lib/omniauth/strategies/facebook.rb",
     "lib/omniauth/strategies/facebook/view_helper.rb",
+    "oa-facebook.gemspec",
     "test/helper.rb",
     "test/test_oa-facebook.rb"
   ]
