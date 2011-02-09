@@ -1,6 +1,65 @@
 = oa-facebook
 
-Description goes here.
+Extension to OmniAuth, that brings cool view helper. All you have to do now is simply add one line to your template and you will see Facebook login button!
+
+== Installation
+
+  gem install oa-facebook
+
+Add to environment.rb
+  
+  config.gem 'oa-facebook'
+
+Add to config/initializers/omniauth.rb:
+
+  #for rails3 projects
+  Rails.application.config.middleware.use OmniAuth::Builder do
+    provider :facebook, <Application ID>, <App Api Key>
+  end
+  #for rails2 projects
+  ActionController::Dispatcher.middleware.use "OmniAuth::Builder" do
+    provider :facebook, <Application ID>, <App Api Key>
+  end
+
+If omniauth routes doesn't exist add them to config/routes.rb (e.g.):
+
+  #rails3
+  match '/auth/:provider/callback' => 'authentications#create'
+  #rails2
+  map.auth_callback '/auth/:provider/callback', :controller => :authentications :action => :create
+
+Then use special helper method for generate Facebook button:
+
+  <%= facebook_login_button %>
+
+or if you want use custom text then use:
+
+  <%= facebook_login_button("Login with Facebook") %>
+
+After click on the button popup window with mail.ru auth-page will be shown and after user was signed in and added 
+permissions for the application then user-data will be transfered with POST-request to /auth/mailru/callback path.
+In action with this path you can use params from request["omniauth.auth"] which body look like:
+
+  {
+    'uid' => '100000882795341', # user Id from Facebook
+    'provider' => 'facebook',
+    'user_info' => {
+      'nick' => 'igor.alexandrov',
+      'email' => 'igor.alexandrov@gmail.com',
+      'name' => 'Igor Alexandrov',
+      'first_name' => 'Igor',
+      'last_name' => 'Alexandrov',
+      'image' => 'http://graph.facebook.com/100000882795341/picture?type=square',
+      'urls' => {
+        'Facebook' => 'http://www.facebook.com/igor.alexandrov'
+      },
+      'location' => 'Tver'
+    }
+  }
+
+== Links
+
+OmniAuth: http://github.com/intridea/omniauth
 
 == Contributing to oa-facebook
  
