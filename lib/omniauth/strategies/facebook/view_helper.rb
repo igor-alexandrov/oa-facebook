@@ -29,7 +29,7 @@ module OmniAuth
               <script src="http://connect.facebook.net/en_US/all.js"></script>
               <script>
                 FB.init({ 
-                  appId:'127762240626765', cookie:true,
+                  appId:#{OmniAuth.config.facebook_app_id}, cookie:true,
                   status:true, xfbml:true 
                 });
 
