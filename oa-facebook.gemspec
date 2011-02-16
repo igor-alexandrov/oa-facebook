@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{oa-facebook}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Alexandrov"]
-  s.date = %q{2011-02-09}
+  s.date = %q{2011-02-16}
   s.description = %q{Include this gem into your project with OmniAuth gem and you will get Facebook login in one line of code.}
   s.email = %q{igor.alexandrov@gmail.com}
   s.extra_rdoc_files = [
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/igor-alexandrov/oa-facebook}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.0}
+  s.rubygems_version = %q{1.5.2}
   s.summary = %q{Facebook OmniAuth module with view helpers}
   s.test_files = [
     "test/helper.rb",
