@@ -22,7 +22,7 @@ module OmniAuth
             }
           end
 
-          def facebook_login_button(value = nil)
+          def facebook_login_button(value = nil, perms = "email")
             value ||= 'Login with Facebook'
             %{
               <div id="fb-root"></div>
@@ -32,6 +32,11 @@ module OmniAuth
                   appId:#{OmniAuth.config.facebook_app_id}, cookie:true,
                   status:true, xfbml:true 
                 });
+                
+                if (jQuery.browser.opera) {
+      	          FB.XD._transport="postmessage";
+                  FB.XD.PostMessage.init();
+      	        }
 
                 fbSession = {
                   afterLogin: function() {
@@ -75,7 +80,7 @@ module OmniAuth
                  }
 
               </script>
-              <fb:login-button perms="email", onlogin="fbSession.afterLogin();">
+              <fb:login-button #{perms} onlogin="fbSession.afterLogin();">
                 #{value}
               </fb:login-button>
             }
