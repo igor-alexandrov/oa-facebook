@@ -36,6 +36,11 @@ or if you want use custom text then use:
 
   <%= facebook_login_button("Login with Facebook") %>
 
+or if you want set custom permissions then use (default is set to "email"):
+
+  <%= facebook_login_button("Login with Facebook", "email, user_groups, user_events") %>
+
+
 After click on the button popup window with mail.ru auth-page will be shown and after user was signed in and added 
 permissions for the application then user-data will be transfered with POST-request to /auth/mailru/callback path.
 In action with this path you can use params from request["omniauth.auth"] which body look like:
