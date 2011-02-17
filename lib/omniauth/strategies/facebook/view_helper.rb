@@ -80,7 +80,7 @@ module OmniAuth
                  }
 
               </script>
-              <fb:login-button #{perms} onlogin="fbSession.afterLogin();">
+              <fb:login-button perms="#{perms}" onlogin="fbSession.afterLogin();">
                 #{value}
               </fb:login-button>
             }
