@@ -12,7 +12,7 @@ begin
     gem.description = %Q{Include this gem into your project with OmniAuth gem and you will get Facebook login in one line of code.}
     gem.email = "igor.alexandrov@gmail.com"
     gem.authors = ["Igor Alexandrov"]
-    gem.add_dependency 'oa-core', '~>0.1.4'
+    gem.add_dependency 'omniauth', '>=0.2.0.beta4'
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "yard", ">= 0"
   end

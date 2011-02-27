@@ -32,14 +32,14 @@ Then use special helper method for generate Facebook button:
 
   <%= facebook_login_button %>
 
-or if you want use custom text then use:
+Also you can pass a Hash as a parameter. Keys are:
+* +native+ – render button with FBML or render image, _true_ by default;
+* +title+ – text in FBML button, or _alt_ parameter of image tag, default is _'Login with Facebook'_;
+* +image+ – address of an image, if +native+ is set to _false_, default is _'http://static.ak.fbcdn.net/images/fbconnect/login-buttons/connect_light_medium_long.gif'_;
+* +perms - permissions list. default is _'email,offline_access'_.
 
-  <%= facebook_login_button("Login with Facebook") %>
-
-or if you want set custom permissions then use (default is set to "email"):
-
-  <%= facebook_login_button("Login with Facebook", "email, user_groups, user_events") %>
-
+Finally you can right something like this:
+  <%= facebook_login_button(:native => false, :title => "Login from Facebook", :perms => "email, user_groups, user_events") %>
 
 After click on the button popup window with mail.ru auth-page will be shown and after user was signed in and added 
 permissions for the application then user-data will be transfered with POST-request to /auth/mailru/callback path.
