@@ -18,8 +18,10 @@ module OmniAuth
                 <script src="http://connect.facebook.net/en_US/all.js"></script>
                 <script>
                   FB.init({ 
-                    appId:#{OmniAuth.config.facebook_app_id}, cookie:true,
-                    status:true, xfbml:true 
+                    appId:#{OmniAuth.config.facebook_app_id},
+                    cookie:true,
+                    status:true,
+                    xfbml:true 
                   });
 
                   if (jQuery.browser.opera) {
@@ -28,15 +30,9 @@ module OmniAuth
         	        }
         	        
         	        function afterFBLogin() {
-        	          FB.getLoginStatus(function(response) {
-        	            if (response.session) {
-        	              // User clicked Connect and he is connected
-        	              window.location='#{OmniAuth.config.path_prefix}/facebook?perms=#{options[:perms]}';
-        	            }
-        	            else {
-        	              // user clicked Cancel
-        	            }
-        	          });
+        	          if ( FB.getSession() != null ) {
+        	            window.location='#{OmniAuth.config.path_prefix}/facebook?perms=#{options[:perms]}';
+        	          }        	          
         	        };
         	        
                 </script>
