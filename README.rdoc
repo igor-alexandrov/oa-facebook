@@ -14,11 +14,11 @@ Add to config/initializers/omniauth.rb:
 
   #for rails3 projects
   Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :facebook, <Application ID>, <App Api Key>
+    provider :facebook, <App ID>, <App Secret>
   end
   #for rails2 projects
   ActionController::Dispatcher.middleware.use "OmniAuth::Builder" do
-    provider :facebook, <Application ID>, <App Api Key>
+    provider :facebook, <App ID>, <App Secret>
   end
 
 If omniauth routes doesn't exist add them to config/routes.rb (e.g.):
