@@ -34,9 +34,9 @@ Then use special helper method for generate Facebook button:
 
 Also you can pass a Hash as a parameter. Keys are:
 * +native+ – render button with FBML or render image, _true_ by default;
-* +title+ – text in FBML button, or _alt_ parameter of image tag, default is _'Login with Facebook'_;
-* +image+ – address of an image, if +native+ is set to _false_, default is _'http://static.ak.fbcdn.net/images/fbconnect/login-buttons/connect_light_medium_long.gif'_;
-* +perms - permissions list. default is _'email,offline_access'_.
+* +title+ – text in FBML button, or _alt_ parameter of image tag, default is _Login with Facebook_;
+* +image+ – address of an image, if +native+ is set to _false_, default is _http://static.ak.fbcdn.net/images/fbconnect/login-buttons/connect_light_medium_long.gif_;
+* +perms+ - permissions list. default is _email,offline_access_.
 
 Finally you can right something like this:
   <%= facebook_login_button(:native => false, :title => "Login from Facebook", :perms => "email, user_groups, user_events") %>
@@ -73,11 +73,9 @@ OmniAuth: http://github.com/intridea/omniauth
 * Fork the project
 * Start a feature/bugfix branch
 * Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 == Copyright
 
-Copyright (c) 2011 Igor Alexandrov. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Igor Alexandrov. See LICENSE.txt for further details.
 
