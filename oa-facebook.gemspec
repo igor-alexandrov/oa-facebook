@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{oa-facebook}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Alexandrov"]
-  s.date = %q{2011-02-17}
+  s.date = %q{2011-02-27}
   s.description = %q{Include this gem into your project with OmniAuth gem and you will get Facebook login in one line of code.}
   s.email = %q{igor.alexandrov@gmail.com}
   s.extra_rdoc_files = [
@@ -24,8 +24,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/oa-facebook.rb",
     "lib/omniauth/facebook.rb",
-    "lib/omniauth/strategies/facebook.rb",
     "lib/omniauth/strategies/facebook/view_helper.rb",
+    "lib/omniauth/strategies/facebook_extensions.rb",
     "oa-facebook.gemspec",
     "test/helper.rb",
     "test/test_oa-facebook.rb"
@@ -44,16 +44,16 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<oa-core>, ["~> 0.1.4"])
+      s.add_runtime_dependency(%q<omniauth>, [">= 0.2.0.beta4"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_development_dependency(%q<yard>, [">= 0"])
     else
-      s.add_dependency(%q<oa-core>, ["~> 0.1.4"])
+      s.add_dependency(%q<omniauth>, [">= 0.2.0.beta4"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<yard>, [">= 0"])
     end
   else
-    s.add_dependency(%q<oa-core>, ["~> 0.1.4"])
+    s.add_dependency(%q<omniauth>, [">= 0.2.0.beta4"])
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<yard>, [">= 0"])
   end
